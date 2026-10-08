@@ -75,18 +75,18 @@ Estoque
 
 ### 3.3 Observabilidade
 
-| Item | Decisão |
-| :--- | :--- |
-| **Logs** | `log/slog` com JSON estruturado. |
-| **Erros inesperados** | HTTP 500 + recover middleware + health check. |
+| Item                  | Decisão                                       |
+| :-------------------- | :-------------------------------------------- |
+| **Logs**              | `log/slog` com JSON estruturado.              |
+
 
 ### 3.4 Deploy e Infraestrutura
 
-| Item           | Decisão                              |
-| :------------- | :----------------------------------- |
-| **Hospedagem** | Fly.io ou Render (a definir).        |
-| **Banco**      | Neon.                                |
-| **CI/CD**      | GitHub Actions (futuro).             |
+| Item           | Decisão                       |
+| :------------- | :---------------------------- |
+| **Hospedagem** | Fly.io ou Render (a definir). |
+| **Banco**      | Neon.                         |
+
 
 ### 3.5 Documentação
 
@@ -157,21 +157,14 @@ gestor-estoque/
 │   └── api/
 │       └── main.go              # Ponto de entrada
 ├── internal/
-│   ├── database/
-│   ├── produto/
-│   │   ├── model.go         # Struct Produto
-│   │   ├── handler.go       # Handler HTTP
-│   │   ├── service.go       # Lógica de negócio
-│   │   └── repository.go    # Acesso ao banco
-│   └── movimentacao/
-│   │    ├── Types.go
-│   │    ├── handler.go
-│   │    ├── service.go
-│   │    └── repository.go
-│   └── errs/
-│       └── erros.go             # Erros personalizados
-├── migrations/
-│   └── 001_init.sql
+│   ├── db/
+│	│	migrations/
+│   │     └── 001_init.sql
+│   ├── estoque/
+│      ├── types.go         # Struct Produto, dtos, erros
+│      ├── handler.go       # Handler HTTP
+│      ├── service.go       # Lógica de negócio
+│      └── repository.go    # Acesso ao banco
 ├── .env.example
 ├── .gitignore
 ├── config/

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Arquitetura.md",
+                "file": "decisoes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arquitetura"
+              "title": "decisoes"
             }
           }
         ]
@@ -190,8 +190,9 @@
   },
   "active": "a8bbf88b15fbeb2d",
   "lastOpenFiles": [
-    "Sem título.base",
     "Arquitetura.md",
+    "decisoes.md",
+    "Sem título.base",
     "arquitetura.excalidraw.crswap",
     "arquitetura.excalidraw",
     "Sem título-2026-08-05-1501.svg"
