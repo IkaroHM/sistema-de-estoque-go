@@ -1,2 +1,3 @@
-arquitetura.excalidraw
+*.excalidraw
 .env
+.obsidian/
