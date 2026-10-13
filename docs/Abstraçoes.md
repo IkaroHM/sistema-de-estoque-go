@@ -15,10 +15,11 @@ import (
 
 type DbConfig struct{
 	Db_URL string
-	MaxConn int
+	MaxConns int32
+	MinConns int32
 	MaxConnLifetime time.Duration
 	MaxConnIdleTime time.Duration
-	ConnTimeout time.Duration
+	QueryTimeout time.Duration
 }
 ```
 
@@ -41,7 +42,7 @@ E entao existira um arquivo "config_manager.go" com uma struct de configs. Segui
 
 package config
 
-type Configs struct{
+type configs struct{
 	DbConfig *DbConfig
 }
 ```

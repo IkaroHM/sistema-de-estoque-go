@@ -97,11 +97,11 @@ Estoque
 
 ### 3.6 Convenções
 
-| Item | Decisão |
-| :--- | :--- |
-| **Formatação** | `gofmt` (nativo). |
-| **Commits** | Conventional Commits (`feat:`, `fix:`, `docs:`, etc). |
-| **Linting** | `golangci-lint` (futuro). |
+| Item           | Decisão                                               |
+| :------------- | :---------------------------------------------------- |
+| **Formatação** | `gofmt` (nativo).                                     |
+| **Commits**    | Conventional Commits (`feat:`, `fix:`, `docs:`, etc). |
+
 
 ---
 
@@ -134,18 +134,20 @@ SQLite
 
 ## 5. Stack
 
-| Camada             | Tecnologia                                  | Justificativa                                 |
-| :----------------- | :------------------------------------------ | :-------------------------------------------- |
-| **Linguagem**      | Go 1.22+                                    | Tipada, compilada, baixo consumo de RAM.      |
-| **Framework web**  | `chi`                                       | Leve, compatível com `net/http`, não opinado. |
-| **Banco de dados** | Postgres                                    | Já usei, é escalavel e simples                |
-| **Driver**         | PGX                                         | Ja usei, simples                              |
-| **Migrations**     | SQL puro em arquivos organizados            | Simples, versionável, sem dependência.        |
-| **Logs**           | `log/slog` (nativo)                         | Estruturado, sem dependência externa.         |
-| **Testes**         | `testing` (nativo)                          | Nativo, sem dependência.                      |
-| **Validação**      | Manual + `go-playground/validator` (futuro) | Controle total no V1.                         |
-| **Hash de senha**  | `golang.org/x/crypto/bcrypt`                | Maduro, simples, seguro.                      |
-| **Sessão**         | Cookie com store em memória ou SQLite       | Simples, nativo do navegador.                 |
+| Camada             | Tecnologia                       | Justificativa                                 |
+| :----------------- | :------------------------------- | :-------------------------------------------- |
+| **Linguagem**      | Go 1.22+                         | Tipada, compilada, baixo consumo de RAM.      |
+| **Framework web**  | `chi`                            | Leve, compatível com `net/http`, não opinado. |
+| **Banco de dados** | Postgres                         | Já usei, é escalavel e simples                |
+| **Driver**         | PGX                              | Ja usei, simples                              |
+| **Migrations**     | SQL puro em arquivos organizados | Simples, versionável, sem dependência.        |
+| **Logs**           | `log/slog` (nativo)              | Estruturado, sem dependência externa.         |
+| **Validação**      | Manual                           | Controle total no V1.                         |
+| **Hash de senha**  | `golang.org/x/crypto/bcrypt`     | Maduro, simples, seguro.                      |
+| **Sessão**         | Cookie com store em memória      | Simples, nativo do navegador.                 |
+| **Env**            | Godotenv                         | Simples, já tenho experiencia                 |
+
+
 
 ---
 
