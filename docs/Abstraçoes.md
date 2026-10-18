@@ -2,62 +2,15 @@ Esse arquivo descreve as abstracoes criadas e suas motivacoes.
 
 ## ConfigManager
 
-o sistema funciona em cima de partes menores e uma parte maior. Existirao arquivos "exemplo_config.go" que sao responsaveis por criar structs como: 
+o sistema funciona em cima de partes menores e uma parte maior. Existirao arquivos "exemplo_config.go" que sao responsaveis por criar structs de configuracoes.
 
-```Go
-//db_config.go
+Suas funcoes serao:
 
-package config
+- carregarConfigModulo() (*structDeConfig, error)
+Observase que "Modulo" é uma generalizacao, ou seja, ele pode ser "Db", "log", etc
 
-import (
-	"time"
-)
+E entao existira um arquivo "config_manager.go" com uma struct de configs.
 
-type DbConfig struct{
-	Db_URL string
-	MaxConns int32
-	MinConns int32
-	MaxConnLifetime time.Duration
-	MaxConnIdleTime time.Duration
-	QueryTimeout time.Duration
-}
-```
+Suas funcoes serao:
 
-Seus métodos serao:
-
-```go
-
-func carregarConfigsDb() *DbConfig{
-	return &DbConfig{
-		// campos}
-	}
-
-```
-
-E entao existira um arquivo "config_manager.go" com uma struct de configs. Seguindo esse modelo:
-
-```go
-
-//config_manager.go
-
-package config
-
-type configs struct{
-	DbConfig *DbConfig
-}
-```
-
-Seus metodos serao:
-
-```go
-
-func CarregarConfig() *Configs{
-
-	dbConfig := carregarConfigsDb()
-
-	return &configs{
-		DbConfig: dbConfig
-	}
-}
-
-```
+- carregarConfig() (*Configs, error)
