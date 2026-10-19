@@ -4,11 +4,14 @@ type configs struct{
 	DbConfig *DbConfig
 }
 
-func CarregarConfig() *configs{
+func CarregarConfig() (*configs, error){
 
-	dbConfig := carregarConfigsDb()
+	dbConfig, err := carregarConfigsDb()
+	if err != nil{
+		return nil, err
+	}
 
 	return &configs{
 		DbConfig: dbConfig,
-	}
+	}, nil
 }
